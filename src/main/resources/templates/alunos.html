@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	Lista de alunos matriculados:
+
+	<div th:each="aluno : ${alunos}">
+		<div>Nome: <span th:text="${aluno.nome}">nome do aluno</span></div>
+		<div>Sexo: <span th:text="${aluno.sexo}">sexo</span></div>
+		<div>Código: <span th:text="${aluno.matricula}">código</span></div>
+		<div>Data de nascimento: <span th:text="${aluno.dataNascimento}">data</span></div>
+	</div>
+</body>
+</html>
