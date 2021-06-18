@@ -12,10 +12,10 @@ import br.com.compasso.avaliacaosprint2.model.Aluno;
 @Controller
 public class HomeController {
 
-	@GetMapping("alunos")
-	public String alunos(Model model) {
+	@GetMapping("aluno")
+	public String aluno(Model model) {
 		Aluno aluno = new Aluno();
-		aluno.setNome("Test");
+		aluno.setNome("Test 01");
 		aluno.setSexo("Masculino");
 		aluno.setMatricula("0001");
 		
@@ -24,4 +24,20 @@ public class HomeController {
 		
 		return "alunos";
 	}
+	
+	@GetMapping("professor")
+	public String professor(Model model) {
+		return "professores";
+	}
+	
+	@GetMapping("turma")
+	public String turma(Model model) {
+		return "turmas";
+	}
+	
+	@GetMapping("curso")
+	public String curso(Model model) {
+		return "cursos";
+	}
+	
 }

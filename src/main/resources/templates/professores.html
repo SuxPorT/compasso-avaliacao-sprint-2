@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Professores</title>
+</head>
+<body>
+	Lista de professores registrados:
+
+	<div th:each="professor : ${professores}">
+		<div>Nome: <span th:text="${professor.nome}">nome do professor</span></div>
+		<div>Sexo: <span th:text="${professor.sexo}">sexo</span></div>
+		<div>Registro: <span th:text="${professor.registro}">registro</span></div>
+	</div>
+</body>
+</html>
