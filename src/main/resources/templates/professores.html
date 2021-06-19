@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Professores</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	Lista de professores registrados:
+	<div class="container">
+		<div>
+			<div class="jumbotron mb-0 mt-3 mb-3">
+		    	<h1 class="display-4">Lista de Professores</h1>
+			</div>
+		</div>
 
-	<div th:each="professor : ${professores}">
-		<div>Nome: <span th:text="${professor.nome}">nome do professor</span></div>
-		<div>Sexo: <span th:text="${professor.sexo}">sexo</span></div>
-		<div>Registro: <span th:text="${professor.registro}">registro</span></div>
+		<div class="card mb-3" th:each="professor : ${professores}">
+			<div class="card-header alert-info" th:text="${professor.nome}">Nome do professor</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="col-md-5">Sexo: <span th:text="${professor.sexo}">Sexo do professor</span></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="col-md-5">Registro: <span th:text="${professor.registro}">Registro do professor</span></div>
+					</div>
+				</div>
+
+				<a href=""><button class="btn btn-outline-success my-2 my-sm-0">Consultar turma</button></a>
+
+				<a href=""><button class="btn btn-outline-primary my-2 my-sm-0">Lançar nota de aluno</button></a>
+
+				<a href=""><button class="btn btn-outline-warning my-2 my-sm-0">Realizar frequência</button></a>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

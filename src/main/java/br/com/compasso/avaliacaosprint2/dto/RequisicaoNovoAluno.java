@@ -1,31 +1,23 @@
-package br.com.compasso.avaliacaosprint2.model;
+package br.com.compasso.avaliacaosprint2.dto;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Aluno {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+import br.com.compasso.avaliacaosprint2.model.Aluno;
+
+public class RequisicaoNovoAluno {
+	@NotBlank
+	private String nome;
 	
-	private String nome, sexo, matricula;
+	@NotBlank
+	private String sexo;
+	
+	@NotBlank
+	private String matricula;
+	
+	@NotBlank
 	private Date dataNascimento;
-	
-	public void registrarAluno() {
-	}
-	
-	public void consultarAluno() {
-	}
-	
-	public void excluirAluno() {
-	}
-	
-	public void alterarMatricula() {
-	}
 
 	public String getNome() {
 		return nome;
@@ -57,6 +49,16 @@ public class Aluno {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public Aluno toAluno() {
+		Aluno aluno = new Aluno();
+		aluno.setNome(nome);
+		aluno.setSexo(sexo);
+		aluno.setMatricula(matricula);
+		aluno.setDataNascimento(dataNascimento);
+		
+		return aluno;
 	}
 	
 }

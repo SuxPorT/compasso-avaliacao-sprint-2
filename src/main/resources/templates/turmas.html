@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Turmas</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	Lista de turmas
+	<div class="container">
+		<div>
+			<div class="jumbotron mb-0 mt-3 mb-3">
+		    	<h1 class="display-4">Lista de Turmas</h1>
+			</div>
+		</div>
+
+		<div class="card mb-3" th:each="turma : ${turmas}">
+			<div class="card-header alert-success" th:text="${turma.codigo}">Código da turma</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="col-md-5">Curso: <span th:text="${turma.curso}">Código do curso</span></div>
+					</div>
+				</div>
+
+				<a href=""><button class="btn btn-outline-secondary my-2 my-sm-0">Listar turma</button></a>
+
+				<a href=""><button class="btn btn-outline-primary my-2 my-sm-0">Listar alunos</button></a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

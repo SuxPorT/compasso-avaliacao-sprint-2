@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Incluir nova disciplina</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron mb-0 mt-3">
+		    <h1 class="display-4">Nova disciplina</h1>
+		</div>
+
+		<div class="card mt-3  mb-3">
+			<form th:object="${requisicaoNovaDisciplina}" class="card-body" action="/forms/novaDisciplina" method="POST">
+				<div class="form-group">
+					<label for="codigo">Código</label>
+					<input th:field="*{codigo}" th:errorClass="is-invalid" class="form-control" placeholder="Código da disciplina">
+
+					<div th:errors="*{codigo}" class="invalid-feedback">
+						Erro do código da disciplina
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="nome">Nome</label>
+					<input th:field="*{nome}" th:errorClass="is-invalid" class="form-control" placeholder="Nome da disciplina">
+
+					<div th:errors="*{nome}" class="invalid-feedback">
+						Erro do nome da disciplina
+					</div>
+				</div>
+
+				<a class="btn btn-info" href="http://localhost:8080/disciplina" role="button">Voltar</a>
+
+				<button class="btn btn-primary" type="submit">Incluir disciplina</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

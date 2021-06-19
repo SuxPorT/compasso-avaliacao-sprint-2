@@ -2,9 +2,9 @@ package br.com.compasso.avaliacaosprint2.dto;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.compasso.avaliacaosprint2.model.Disciplina;
+import br.com.compasso.avaliacaosprint2.model.Curso;
 
-public class RequisicaoNovaDisciplina {
+public class RequisicaoNovoCurso {
 	@NotBlank
 	private String codigo;
 	
@@ -26,13 +26,13 @@ public class RequisicaoNovaDisciplina {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public Disciplina toDisciplina() {
-		Disciplina disciplina = new Disciplina();
-		disciplina.setCodigo(codigo);
-		disciplina.setNome(nome);
+	
+	public Curso toCurso() {
+		Curso curso = new Curso();
+		curso.setCodigo(codigo);
+		curso.setNome(nome);
 		
-		return disciplina;
+		return curso;
 	}
 	
 }

@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Cursos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	Lista de cursos
+	<div class="container">
+		<div>
+			<div class="jumbotron mb-0 mt-3">
+		    	<h1 class="display-4">Lista de Cursos</h1>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+		    <div class="navbar-nav">
+		        <a href="/forms/novoCurso"><button class="btn btn-outline-primary my-2 my-sm-0">Incluir novo curso</button></a>
+		    </div>
+		</nav>
+
+		<div class="card mb-3" th:each="curso : ${cursos}">
+			<div class="card-header alert-warning" th:text="${curso.nome}">Nome do curso</div>
+
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="col-md-5">Código: <span th:text="${curso.codigo}">Código do curso</span></div>
+					</div>
+				</div>
+
+				<a href=""><button class="btn btn-outline-secondary my-2 my-sm-0">Consultar curso</button></a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
